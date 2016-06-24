@@ -16,6 +16,23 @@ set incsearch " search as characters are entered
 set hlsearch " highlight matches
 " set nohlsearch " :noh
 
+"ctrlp plugin
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlP'
+" unsucced
+map <leader>f :CtrlPMRU<CR>
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+
 " folding settings
 set foldmethod=indent
 set foldnestmax=10
@@ -40,3 +57,6 @@ nnoremap gV `[v`]
 
 " use jk to replace <Esc>
 inoremap jk <Esc>
+
+" my leader key
+let mapleader=";"
