@@ -75,4 +75,24 @@ if has("gui_running")
   endif
 endif
 
+"解决中文字符兼容问题
 set encoding=utf-8
+set fileencodings=utf-8,chinese,latin-1
+if has("win32")
+set fileencoding=chinese
+else
+set fileencoding=utf-8
+endif
+"解决菜单乱码
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+"解决consle输出乱码
+language messages zh_CN.utf-8
+
+" backspace over everything in insert mode
+set backspace=indent,eol,start 
+
+" hide the menu ...
+set guioptions-=m  "menu bar
+set guioptions-=T  "toolbar
+set guioptions-=r  "scrollbar
